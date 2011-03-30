@@ -48,6 +48,7 @@ program plasma
   end if
 
 !t_current, jet_rr, f_mass_out_jet, bigjet_rr, f_mass_out, maxivel
+!t_current, jet_rr, f_mass_out_jet, bigjet_rr, f_mass_out, maxivel
 
 
   ! ===============================
