@@ -24,8 +24,6 @@ program plasma
 
   logical :: fexist
 
-  call mmap_test
-
   call DATE_AND_TIME(ddate, dtime, dzone, dvalues)
   dhour = dvalues(5)
   dmin = dvalues(6)

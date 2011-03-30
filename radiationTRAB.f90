@@ -7,19 +7,6 @@ use iso_c_binding
 
 implicit none
 
-interface
-
-type(c_ptr) function mmap(addr,len,prot,flags,fildes,off) bind(c,name='mmap')
-  use iso_c_binding
-  integer(c_int), value :: addr
-  integer(c_size_t), value :: len
-  integer(c_int), value :: prot
-  integer(c_int), value :: flags
-  integer(c_int), value :: fildes
-  integer(c_size_t), value :: off
-end function mmap
-
-end interface
 
 logical :: notDiskOnly = .true.
 
@@ -52,31 +39,6 @@ integer, dimension(1:fullNodes) :: nDirectsAB
 real (kind=precis) :: minDirMax = 2D-1
 
 contains
-
-subroutine mmap_test
-
-  type(c_ptr) :: cptr
-  integer(c_size_t) :: len, off
-  integer,parameter :: PROT_READ=1
-  integer,parameter :: MAP_PRIVATE=2
-  integer :: fd
-  real*4, pointer :: x(:)
-
-  len = 4096
-  off = 0
-  cptr = mmap(0,len,PROT_READ,MAP_PRIVATE,fd,off)
-
-print *, "aaa"
-  call c_f_pointer(cptr,x,[len])
-print *, "bbb"
-print *, x
-!   do i = 1, 10
-!     print *, i, x(i)
-!   enddo
-print *, "ccc"
-  read *
-
-end subroutine
 
 subroutine InitGroupsTriAB
 
