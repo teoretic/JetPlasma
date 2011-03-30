@@ -1,0 +1,5 @@
+FC = ifort
+LD = ifort
+LIST = -listing
+FFLAGS = -O2 -openmp -assume buffered_io
+LDFLAGS = -O2 -openmp -assume buffered_io
