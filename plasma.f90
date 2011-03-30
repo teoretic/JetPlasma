@@ -48,8 +48,6 @@ program plasma
   end if
 
 !t_current, jet_rr, f_mass_out_jet, bigjet_rr, f_mass_out, maxivel
-!t_current, jet_rr, f_mass_out_jet, bigjet_rr, f_mass_out, maxivel
-
 
   ! ===============================
   ! 1. Инициализация описателей сетки и массивов для
@@ -243,7 +241,7 @@ program plasma
      if (is_finished_time()) &
           exit timestepping
 
-!	call info_write
+! call info_write
 
   end do timestepping
 
